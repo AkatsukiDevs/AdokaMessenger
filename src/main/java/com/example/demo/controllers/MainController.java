@@ -23,17 +23,17 @@ public class MainController {
         return "hello";
     }
 
-    @GetMapping("/chat")
+    @GetMapping("/")
     public String home(Model model) {
         Iterable<Chat> chats = chatRepository.findAll();
         model.addAttribute("chats", chats);
         return "home";
     }
 
-    @PostMapping("/chat")
+    @PostMapping("/")
     public String postMessage(@RequestParam String bodyMessage,String name,String time, Model model) {
             Chat chat = new Chat(bodyMessage,name,time);
             chatRepository.save(chat);
-            return "hello";
+            return "home";
         }
     }
