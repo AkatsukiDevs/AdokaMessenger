@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-sm-4 col-sm-offset-4     frame">
+    <ul th:each="el : ${chats}">
+        <div><p th:text="${el.name}"></p></div>
+        <div><p th:text="${el.time}"></p></div>
+        <div><p th:text="${el.bodyMessage}"></p></div>
+    </ul>
+</div>
+</body>
+</html>
